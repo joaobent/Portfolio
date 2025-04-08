@@ -1,0 +1,147 @@
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #faf5ee;
+  }
+  
+  /* Cabeçalho */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1d503a;
+    color: white;
+    padding: 10px 20px;
+    min-height: 60px;
+  }
+  
+  ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  li {
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .conte-header {
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .conte-header:hover {
+    color: #f0c14b;
+  }
+  
+  /* Botão Contato */
+  .contato {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 16px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    background-color: #f5f5f5;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .contato:hover {
+    background-color: #a87c2a;
+  }
+  
+  /* Seção Sobre Mim */
+  .sobre {
+    padding: 40px 20px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+  }
+  
+  .sobre h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  /* Seção Projetos */
+  .projetos {
+    padding: 40px 20px;
+    background-color: #e8f5e9;
+    text-align: center;
+  }
+  
+  .projetos h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .projeto-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: left;
+  }
+  
+  /* Rodapé */
+  .footer {
+    background-color: #1d503a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+  
+  /* Scroll reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    ul {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .contato {
+      margin-top: 10px;
+    }
+  
+    .projetos-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  

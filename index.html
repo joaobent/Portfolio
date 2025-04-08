@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#" class="conte-header">Início</a></li>
+        <li><a href="#sobre" class="conte-header">Sobre</a></li>
+        <li><a href="#projetos" class="conte-header">Projetos</a></li>
+      </ul>
+    </nav>
+    <!-- Corrigido: botão de contato com link funcional -->
+    <a href="#contato" class="contato">Contato</a>
+  </header>
+
+  <section id="sobre" class="sobre reveal">
+    <h2>Sobre Mim</h2>
+    <p>Olá! Eu sou João Pedro Bento de Andrade, desenvolvedor apaixonado por tecnologia e design. Tenho experiência em HTML, CSS, JavaScript e Python, e estou sempre aprendendo coisas novas.</p>
+  </section>
+
+  <section id="projetos" class="projetos reveal">
+    <h2>Meus Projetos</h2>
+    <div class="projetos-grid">
+      <div class="projeto-card">
+        <h3>Projeto 1</h3>
+        <p>Descrição rápida do projeto.</p>
+      </div>
+      <div class="projeto-card">
+        <h3>Projeto 2</h3>
+        <p>Descrição rápida do projeto.</p>
+      </div>
+      <div class="projeto-card">
+        <h3>Projeto 3</h3>
+        <p>Descrição rápida do projeto.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contatos reveal">
+    <h2>Contato</h2>
+    <form action="#" method="post">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required />
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+      
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" required></textarea>
+      
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer class="footer reveal">
+    <p>© 2025 - João Pedro Bento de Andrade. Todos os direitos reservados.</p>
+    <hr>
+    <p>Email: seuemail@exemplo.com | LinkedIn: /seulinkedin</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
