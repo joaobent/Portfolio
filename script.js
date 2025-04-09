@@ -52,7 +52,7 @@ function checkHeaderTransparency() {
 function revealElementsOnScroll() {
   const elements = document.querySelectorAll(".reveal");
   const windowHeight = window.innerHeight;
-  const revealPoint =150;
+  const revealPoint =140;
   
   elements.forEach(element => {
     const elementTop = element.getBoundingClientRect().top;
