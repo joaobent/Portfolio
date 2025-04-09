@@ -1,22 +1,68 @@
-// Função para animar elementos ao rolar a página
-function revealOnScroll() {
-    const elements = document.querySelectorAll('.reveal');
+// Função principal que inicializa todas as animações
+function initScrollAnimations() {
+  // Configura o header inicialmente
+  const header = document.querySelector("header");
+  header.classList.add("transparent");
   
-    for (const el of elements) {
-      const windowHeight = window.innerHeight;
-      const elementTop = el.getBoundingClientRect().top;
-      const visible = 150;
+  // Adiciona o event listener para scroll
+  window.addEventListener("scroll", handleScroll);
   
-      if (elementTop < windowHeight - visible) {
-        el.classList.add('active');
-      } else {
-        el.classList.remove('active');
-      }
-    }
+  // Executa uma primeira vez para verificar a posição inicial
+  handleScroll();
+}
+
+// Função que gerencia todos os efeitos de scroll
+function handleScroll() {
+  checkHeaderTransparency();
+  revealElementsOnScroll();
+}
+
+function initScrollAnimations() {
+  const header = document.querySelector("header");
+  
+  // Inicia com header sólido (removemos a classe transparent)
+  header.classList.remove("transparent");
+  header.classList.add("solid");
+  
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+}
+
+function handleScroll() {
+  checkHeaderTransparency();
+  revealElementsOnScroll();
+}
+
+function checkHeaderTransparency() {
+  const header = document.querySelector("header");
+  const scrollY = window.scrollY;
+  const threshold = 80; // Ajuste este valor para quando começar a transição
+  
+  // Invertemos a lógica aqui
+  if (scrollY > threshold) {
+    header.classList.add("transparent");
+    header.classList.remove("solid");
+  } else {
+    header.classList.remove("transparent");
+    header.classList.add("solid");
   }
+}
+
+// Mantemos a função de reveal igual
+function revealElementsOnScroll() {
+  const elements = document.querySelectorAll(".reveal");
+  const windowHeight = window.innerHeight;
+  const revealPoint =150;
   
-  window.addEventListener('scroll', revealOnScroll);
-  
-  // Ativa logo ao carregar também
-  revealOnScroll();
-  
+  elements.forEach(element => {
+    const elementTop = element.getBoundingClientRect().top;
+    
+    if (elementTop < windowHeight - revealPoint) {
+      element.classList.add("active");
+    } else {
+      element.classList.remove("active");
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initScrollAnimations);
