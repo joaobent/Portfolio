@@ -1,4 +1,4 @@
-/* Reset e base */
+
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +21,7 @@ body {
   }
 }
 
-/* Cabeçalho */
+
 header {
   position: fixed;
   top: 0;
@@ -314,7 +314,7 @@ button[type="submit"]:hover {
   transform: translateY(0);
 }
 
-/* Responsivo */
+
 @media (max-width: 768px) {
   .contato {
     margin-top: 10px;
