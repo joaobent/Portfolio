@@ -65,4 +65,13 @@ function revealElementsOnScroll() {
   });
 }
 
+const toggle = document.getElementById('menu-toggle');
+const nav = document.getElementById('nav');
+
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('open');
+  nav.classList.toggle('open');
+});
+
+
 document.addEventListener("DOMContentLoaded", initScrollAnimations);
