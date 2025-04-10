@@ -150,22 +150,27 @@ header.solid {
   min-height: 500px;
   min-width: 350px;
   
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
 }
 
 .projeto-card p{
-  margin-top: 20px;
+  margin-top: auto; /* Garante que o <p> vá pro final da coluna */
 }
 
-.clinica{
-  margin-bottom: 20px;
+.tit-projeto{
+  margin-top: 5px;
+  margin-bottom: 60px;
   text-align: center;
   text-decoration: none;
   
 }
-.clinica>a {
+.tit-projeto>a {
   text-decoration: none;
   color: #000000;
-  font-size: 23px;
+  font-size: 25px;
   
 }
 
