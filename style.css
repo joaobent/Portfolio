@@ -74,15 +74,32 @@ header.solid {
 }
 
 .nav a {
+  position: relative;
   color: white;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
 
-.nav a:hover {
-  color: #f0c14b;
+nav a::after{
+  content: " ";
+  width: 0%;
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s ease-in-out;
 }
+
+nav a:hover::after{
+  width: 100%;
+}
+
+nav a:hover {
+  color: #000000;
+}
+
 
 /* Botão hambúrguer continua */
 .menu-toggle {
@@ -108,28 +125,100 @@ header.solid {
 
 
 .sobre {
-  padding: 40px 20px;
   background-color: #fff;
   color: #333;
   text-align: center;
 }
 
 .sobre h2 {
+  margin-top: 30px;
   font-size: 28px;
   margin-bottom: 20px;
 }
 
-.sobre p {
-  font-size: 20px;
-  line-height: 1.6;
-  max-width: 910px;
-  margin: auto;
+.sobre-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  text-align: left;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 30px;
 }
 
-.sobre span {
-  font-weight: bold;
-  color: #ff0707;
+.foto-container {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
 }
+
+.foto {
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.conteudo-sobre {
+  flex: 2;
+  min-width: 300px;
+}
+
+.txt-animado {
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  line-height: 1.5; /* Garante alinhamento vertical consistente */
+}
+
+.txt-animado p {
+  
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap; /* evita quebra entre o texto e o nome */
+  gap: 5px;
+}
+
+.txt-animado span {
+  color: #ff0707;
+  font-weight: bold;
+  
+}
+
+.sobre-texto p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.digitando {
+  display: inline-block;
+  max-width: 0;
+  white-space: nowrap;
+  color: #ff0707;
+  font-weight: bold;
+  overflow: hidden;
+  vertical-align: middle;
+  line-height: 1;
+  animation: revealLeft 3s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+
+
+@keyframes revealLeft {
+  0% {
+    max-width: 0;
+  }
+  100% {
+    max-width: 26ch; /* ajuste para a quantidade de letras do seu nome */
+  }
+}
+
+
 
 
 
