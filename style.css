@@ -329,6 +329,25 @@ button[type="submit"]:hover {
   background-color: #3d8a66;
 }
 
+/* Estilos para mensagens de sucesso e erro */
+.mensagem {
+  display: none;
+  margin-top: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+#mensagem-sucesso {
+  color: green;
+}
+
+#mensagem-erro {
+  color: red;
+}
+
+
+
 .footer {
   background-color: #1d503a;
   color: white;

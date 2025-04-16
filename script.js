@@ -57,12 +57,27 @@ toggle.addEventListener('click', () => {
 // ========= FORMULÁRIO COM ENVIO SUAVE =========
 function initFormSubmit() {
   const form = document.getElementById('contato-form');
-  const mensagem = document.getElementById('mensagem-sucesso');
+  const mensagemSucesso = document.getElementById('mensagem-sucesso');
+  const mensagemErro = document.getElementById('mensagem-erro');
 
-  if (!form) return;
+  if (!form || !mensagemSucesso || !mensagemErro) return;
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+
+    // Validação de e-mail
+    const email = form.querySelector('input[name="email"]').value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      mensagemErro.textContent = 'Por favor, insira um e-mail válido.';
+      mensagemErro.style.display = 'block';
+      mensagemSucesso.style.display = 'none';
+      setTimeout(() => {
+        mensagemErro.style.display = 'none';
+      }, 5000);
+      return;
+    }
 
     const formData = new FormData(form);
 
@@ -72,17 +87,32 @@ function initFormSubmit() {
       headers: {
         'Accept': 'application/json'
       }
-    }).then(response => {
-      if (response.ok) {
-        mensagem.style.display = 'block';
-        form.reset();
+    })
+      .then(response => {
+        if (response.ok) {
+          mensagemSucesso.style.display = 'block';
+          mensagemErro.style.display = 'none';
+          form.reset();
+          setTimeout(() => {
+            mensagemSucesso.style.display = 'none';
+          }, 5000);
+        } else {
+          mensagemErro.textContent = 'Erro ao enviar. Tente novamente.';
+          mensagem焦作: mensagemErro.style.display = 'block';
+          mensagemSucesso.style.display = 'none';
+          setTimeout(() => {
+            mensagemErro.style.display = 'none';
+          }, 5000);
+        }
+      })
+      .catch(() => {
+        mensagemErro.textContent = 'Erro de conexão. Verifique sua internet e tente novamente.';
+        mensagemErro.style.display = 'block';
+        mensagemSucesso.style.display = 'none';
         setTimeout(() => {
-          mensagem.style.display = 'none';
-        }, 5000); // Esconde a mensagem após 5 segundos
-      } else {
-        alert('Erro ao enviar. Tente novamente.');
-      }
-    });
+          mensagemErro.style.display = 'none';
+        }, 5000);
+      });
   });
 }
 
