@@ -502,6 +502,9 @@ button[type="submit"]:hover {
     font-size: 14px; /* Reduz tamanho da fonte do menu */
     gap: 8px;
   }
+  nav a:hover {
+    color: #000000;
+  }
   
 
   .sobre h2 {
