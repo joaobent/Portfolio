@@ -11,28 +11,18 @@ body {
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-/* Estado transparente (quando rolar) */
 header.transparent {
   background-color: rgba(29, 80, 58, 0.7);
-  /* Transparência aumentada */
   backdrop-filter: blur(6px);
-  /* Mais blur quando transparente */
   box-shadow: none;
 }
 
-/* Estado sólido (inicial) */
 header.solid {
   background-color: #276b4eec;
-  /* Cor sólida completa */
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -50,14 +40,6 @@ header.solid {
   transition: all 0.4s ease;
 }
 
-/* Logo à esquerda */
-.header .logo {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-}
-
-/* Centralizar a lista de navegação */
 .nav {
   flex: 2;
   display: flex;
@@ -81,7 +63,7 @@ header.solid {
   transition: color 0.3s;
 }
 
-nav a::after{
+nav a::after {
   content: " ";
   width: 0%;
   height: 2px;
@@ -92,7 +74,7 @@ nav a::after{
   transition: 0.3s ease-in-out;
 }
 
-nav a:hover::after{
+nav a:hover::after {
   width: 100%;
 }
 
@@ -100,8 +82,6 @@ nav a:hover {
   color: #000000;
 }
 
-
-/* Botão hambúrguer continua */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -120,15 +100,10 @@ nav a:hover {
   transition: all 0.4s ease;
 }
 
-
-
-
-
 .sobre {
   background-color: #fff;
   color: #333;
   text-align: center;
-  
 }
 
 .sobre h2 {
@@ -172,27 +147,26 @@ nav a:hover {
   font-weight: 300;
   margin-bottom: 15px;
   margin-top: 20px;
-  line-height: 1.5; /* Garante alinhamento vertical consistente */
+  line-height: 1.5;
+  white-space: nowrap; /* Evita quebra de linha no contêiner */
+  overflow: hidden; /* Garante que o texto não transborde */
 }
 
 .txt-animado p {
-  
   margin: 0;
-  display: flex;
+  display: inline-flex; /* Usa inline-flex para manter o texto alinhado */
   align-items: center;
-  flex-wrap: nowrap; /* evita quebra entre o texto e o nome */
   gap: 5px;
 }
 
 .txt-animado span {
-  color: #ff0707;
+  color: #d00000; /* Ajustado de #ff0707 para melhor contraste */
   font-weight: bold;
-  
 }
 
-.sobre-texto{
+.sobre-texto {
   max-width: 500px;
-  } 
+}
 
 .sobre-texto p {
   font-size: 18px;
@@ -203,7 +177,7 @@ nav a:hover {
   display: inline-block;
   max-width: 0;
   white-space: nowrap;
-  color: #ff0707;
+  color: #d00000; /* Ajustado de #ff0707 para melhor contraste */
   font-weight: bold;
   overflow: hidden;
   vertical-align: middle;
@@ -212,22 +186,10 @@ nav a:hover {
   animation-delay: 0.8s;
 }
 
-
-
 @keyframes revealLeft {
-  0% {
-    max-width: 0;
-  }
-  100% {
-    max-width: 26ch; /* ajuste para a quantidade de letras do seu nome */
-  }
+  0% { max-width: 0; }
+  100% { max-width: 100%; } /* Usa 100% para evitar overflow */
 }
-
-
-
-
-
-
 
 .projetos {
   padding: 40px 20px;
@@ -250,44 +212,37 @@ nav a:hover {
   padding: 0 30px;
 }
 
-
 .projeto-card {
   background-color: white;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  text-align: center; /* <- Centraliza o texto */
+  text-align: center;
   min-height: 300px;
   width: 100%;
   max-width: 850px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* <- Centraliza conteúdo horizontalmente */
-  
+  align-items: center;
 }
-
 
 .projeto-card p {
   margin-top: 20px;
   text-align: center;
 }
 
-
 .tit-projeto {
   margin-top: 5px;
   margin-bottom: 60px;
   text-align: center;
   text-decoration: none;
-
 }
 
-.tit-projeto>a {
+.tit-projeto > a {
   text-decoration: none;
   color: #000000;
   font-size: 25px;
-
 }
-
 
 .projeto-img {
   width: 80%;
@@ -297,19 +252,12 @@ nav a:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-bottom: 20px;
-  
 }
 
 .projeto-img:hover {
   transform: scale(1.02);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
 }
-
-
-
-
-
-
 
 .contatos {
   padding: 40px 20px;
@@ -343,9 +291,7 @@ textarea {
   height: 47px;
   font-size: 16px;
   border: #1d503a solid 2px;
-  font-family: 'poppins', sans-serif;
   color: #ffffff;
-
 }
 
 textarea {
@@ -360,16 +306,12 @@ textarea:focus {
   color: #ffffff;
   border: 2px solid #1d503a;
   background-color: #858d86;
-  font-family: 'poppins', sans-serif;
-
-
 }
 
 input::placeholder,
 textarea::placeholder {
   border: none;
   color: #ffffff;
-
 }
 
 button[type="submit"] {
@@ -387,46 +329,31 @@ button[type="submit"]:hover {
   background-color: #326b50;
 }
 
-
-
-
-
-
-
-
-
-
 .footer {
   background-color: #1d503a;
   color: white;
   text-align: center;
   padding: 10px;
   font-size: 14px;
-  height: 18vh;
+  min-height: 18vh;
 }
 
 .direitos {
   margin-top: 25px;
-
 }
 
 .footer hr {
   margin: 10px auto;
   width: 50%;
-  border-color: #ccc 2px solid;
+  border: 2px solid #ccc;
 }
 
 .contatos1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
-
-
-
-/* Scroll reveal animation */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -438,10 +365,19 @@ button[type="submit"]:hover {
   transform: translateY(0);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .digitando {
+    animation: none;
+    max-width: 100%;
+  }
+}
 
 @media (max-width: 768px) {
-
-  /* Botão hamburguer */
   .menu-toggle {
     display: flex;
     flex-direction: column;
@@ -461,7 +397,6 @@ button[type="submit"]:hover {
     transition: all 0.4s ease;
   }
 
-  /* Ícone em X */
   .menu-toggle.open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 6px);
   }
@@ -474,7 +409,6 @@ button[type="submit"]:hover {
     transform: rotate(-45deg) translate(5px, -6px);
   }
 
-  /* Menu estilo "caixinha" */
   .nav {
     position: fixed;
     top: 60px;
@@ -492,7 +426,6 @@ button[type="submit"]:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-
   }
 
   .nav.open {
@@ -523,15 +456,14 @@ button[type="submit"]:hover {
     color: #f0c14b;
   }
 
+  .contatos {
+    margin-top: 10px;
+  }
 }
 
-
-@media(max-width:450px) {
+@media (max-width: 450px) {
   .footer {
-
     padding: 0;
-
-
   }
 
   .direitos {
@@ -540,11 +472,152 @@ button[type="submit"]:hover {
 }
 
 @media (max-width: 768px) {
-  .contato {
-    margin-top: 10px;
+
+}
+
+
+
+
+/* Media query para telas de até 350px */
+@media (max-width: 450px) {
+  body {
+    padding-top: 60px; /* Reduz padding superior */
+  }
+
+  .header {
+    padding: 10px 15px; /* Reduz padding do header */
+  }
+
+  .header img {
+    height: 35px; /* Reduz tamanho do logo */
+  }
+
+  .nav {
+    top: 50px; /* Ajusta posição do menu dropdown */
+    width: 120px; /* Reduz largura do menu */
+    right: 10px;
+  }
+
+  .nav ul {
+    font-size: 14px; /* Reduz tamanho da fonte do menu */
+    gap: 8px;
+  }
+
+  .sobre h2 {
+    font-size: 20px; /* Reduz tamanho do título */
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .sobre-container {
+    flex-direction: column; /* Empilha imagem e texto */
+    gap: 15px;
+    padding: 0 8px;
+  }
+
+  .foto-container {
+    min-width: 100%; /* Imagem ocupa largura total */
+  }
+
+  .foto {
+    height: 160px; /* Reduz tamanho da foto */
+    width: 100%;
+    max-width: 180px;
+  }
+
+  .conteudo-sobre {
+    min-width: 100%; /* Texto ocupa largura total */
+    text-align: center;
+  }
+
+  .txt-animado {
+    font-size: 16px; /* Reduz tamanho da fonte */
+    margin-top: 8px;
+  }
+
+  .sobre-texto p {
+    font-size: 13px; /* Reduz tamanho do texto */
+  }
+
+  .digitando {
+    font-size: 16px; /* Ajusta tamanho da animação de digitação */
+  }
+
+  .projetos {
+    padding: 15px 8px; /* Reduz padding */
+  }
+
+  .projetos h2 {
+    font-size: 20px; /* Reduz tamanho do título */
+    margin-bottom: 15px;
   }
 
   .projetos-grid {
-    grid-template-columns: 1fr;
+    width: 100%; /* Usa largura total */
+    padding: 0 8px;
+    gap: 30px;
+  }
+
+  .projeto-card {
+    padding: 12px;
+    min-height: 220px; /* Reduz altura mínima */
+  }
+
+  .projeto-img {
+    width: 100%; /* Imagem ocupa largura total */
+    max-width: 260px;
+    height: auto; /* Mantém proporção */
+  }
+
+  .tit-projeto > a {
+    font-size: 18px; /* Reduz tamanho do título */
+  }
+
+  .projeto-card p {
+    font-size: 13px; /* Reduz tamanho do texto */
+  }
+
+  .contatos {
+    padding: 15px 8px; /* Reduz padding */
+  }
+
+  .comigo {
+    font-size: 20px; /* Reduz tamanho do título */
+    margin-bottom: 15px;
+  }
+
+  form {
+    max-width: 100%; /* Usa largura total */
+    padding: 0 8px;
+    gap: 12px;
+  }
+
+  input,
+  textarea {
+    height: 36px; /* Reduz altura dos inputs */
+    font-size: 13px; /* Reduz tamanho da fonte */
+  }
+
+  textarea {
+    min-height: 90px; /* Reduz altura do textarea */
+  }
+
+  button[type="submit"] {
+    padding: 7px 12px; /* Reduz padding do botão */
+    font-size: 13px;
+  }
+
+  .footer {
+    min-height: 14vh; /* Reduz altura mínima */
+    font-size: 11px; /* Reduz tamanho da fonte */
+    padding: 8px 5px;
+  }
+
+  .direitos {
+    margin-top: 10px;
+  }
+
+  .contatos1 p {
+    font-size: 11px; /* Reduz tamanho da fonte */
   }
 }
