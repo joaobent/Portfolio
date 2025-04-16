@@ -99,12 +99,21 @@
   <section id="contato" class="contatos reveal">
     <h2 class="comigo">Fale Comigo</h2>
 
-    <form action="https://formsubmit.co/andradeszk7@gmail.com" method="POST">
+    <form id="contato-form" action="https://formsubmit.co/andradeszk7@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="box">
+    
       <input type="text" name="nome" required placeholder="Digite seu nome completo:" />
       <input type="email" name="email" required placeholder="Digite seu e-mail:" />
       <textarea name="mensagem" required placeholder="Sua mensagem"></textarea>
+    
       <button type="submit">Enviar</button>
     </form>
+    
+    <!-- Mensagem de sucesso -->
+    <p id="mensagem-sucesso" style="display:none; color: green; margin-top: 10px;">
+      Mensagem enviada com sucesso! ✅
+    </p>
     
   </section>
 
