@@ -452,8 +452,8 @@ button[type="submit"]:hover {
     transition: color 0.3s ease;
   }
 
-  .nav a:hover {
-    color: #f0c14b;
+  nav a:hover {
+    color: #000000;
   }
 
   .contatos {
@@ -502,6 +502,7 @@ button[type="submit"]:hover {
     font-size: 14px; /* Reduz tamanho da fonte do menu */
     gap: 8px;
   }
+  
 
   .sobre h2 {
     font-size: 20px; /* Reduz tamanho do título */
