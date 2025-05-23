@@ -541,7 +541,7 @@ button[type="submit"]:hover {
   
 
   .sobre h2 {
-    font-size: 20px; /* Reduz tamanho do título */
+    font-size: 24px; /* Reduz tamanho do título */
     margin-top: 15px;
     margin-bottom: 10px;
   }
@@ -568,12 +568,12 @@ button[type="submit"]:hover {
   }
 
   .txt-animado {
-    font-size: 16px; /* Reduz tamanho da fonte */
+    font-size: 18px; /* Reduz tamanho da fonte */
     margin-top: 8px;
   }
 
   .sobre-texto p {
-    font-size: 13px; /* Reduz tamanho do texto */
+    font-size: 16px; /* Reduz tamanho do texto */
   }
 
   .digitando {
