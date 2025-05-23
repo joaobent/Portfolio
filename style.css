@@ -364,7 +364,9 @@ button[type="submit"]:hover {
 .footer hr {
   margin: 10px auto;
   width: 50%;
-  border: 2px solid #ccc;
+  border: 2px solid #868686;
+  border-radius: 30px;
+  opacity: 100%;
 }
 
 .contatos1 {
