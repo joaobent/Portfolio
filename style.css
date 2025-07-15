@@ -326,7 +326,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #3d8a66;
+  background-color: #55c591;
 }
 
 
@@ -506,7 +506,7 @@ button[type="submit"]:hover {
 
 
 /* Media query para telas de até 350px */
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   body {
     padding-top: 60px; /* Reduz padding superior */
   }
